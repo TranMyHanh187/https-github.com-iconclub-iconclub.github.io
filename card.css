@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ffffff;
+}
+header{
+    background-image: image();
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+.greeting{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.greeting_main{
+    color: #663300;
+    display: block;
+}
+.greeting_sub{
+    color: #663300;
+    display: block;
+    font-style: italic;
+}
+.button,
+.button:link,
+.button:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    font-size: 16px;
+    position: relative;
+    transition: all 2.2s
+}
+.button_color{
+    background-color: #b0e0e6;
+    color: #008080;
+}
+.button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px #b0e0e6;
+}
+.button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 100px;
+    transition: all 2.4s;
+}
+.btn:active{
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px #b0e0e6;
+}
+.button_color::after{
+    background-color: #b0e0e6;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.heading-greeting_main{
+    animation: moveInLeft 3s ease-out;
+}
+
+.heading-greeting_sub{
+    animation: moveInRight 3s ease-out
+}
+
+.btn-animated{
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+footer{
+    color: black;
+}
